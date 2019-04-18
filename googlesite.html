@@ -21,9 +21,14 @@ Google Maps Mashup Starter Code:
 <div id="map"></div>
 <script>
 	var map;
-	var parks = [
-		{"park":"Yellowstone","coords":[44.4280,-110.5885]},
-		{"park":"Glacier","coords":[48.7596, -113.7870]}
+	var aboutme = [
+		{"place":"toronto","coords":[43.651893, -79.381713]},
+		{"place":"alberton","coords":[46.812868, -64.064879]},
+		{"place":"calgary","coords":[ 51.046362, -114.05803]},
+		{"place":"missisauga","coords":[43.586162,-79.646215]},
+		{"place":"winnipeg","coords":[ 49.900496, -97.139309]},
+		{"place":"surrey","coords":[49.104508,  -122.823486]},
+
 		];
 
 	function initMap() {
@@ -33,7 +38,7 @@ Google Maps Mashup Starter Code:
 			mapTypeId: 'terrain'
 		});
 
-		mashParks(parks);
+		mashParks(aboutme);
 	}
 
 	function mashParks(results) {
@@ -43,7 +48,7 @@ Google Maps Mashup Starter Code:
 		var marker = new google.maps.Marker({
 			position: latLng,
 			map: map,
-			label:results[i].park
+			label:results[i].place
 			});
 		}
 	}
